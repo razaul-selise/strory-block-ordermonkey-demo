@@ -30,6 +30,17 @@ pnpm install
 
 ```bash
 sh scripts/setup-hooks.sh
+
+```
+
+### 4.Setup Storyblok
+
+Go to the package.json file and replace YOUR*SPACE_ID_WITHOUT*# with your SB space id.DO this Step each time you update storyblok schema to get the latest types and suggestions. Now run
+
+```bash
+storyblok login
+pnpm pull-sb-components
+pnpm generate-sb-types
 ```
 
 ### 5. Run the development server
@@ -39,3 +50,7 @@ pnpm dev
 or
 pnpm dev-https
 ```
+
+### 5. Usefull functions
+
+You will find some usefull function on utils.ts. and lib folder.

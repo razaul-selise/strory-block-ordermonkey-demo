@@ -1,14 +1,14 @@
-import { Menu } from "@/.storyblok/types/287474179047807/storyblok-components";
+import { Page } from "@/.storyblok/types/287474179047807/storyblok-components";
 import { SbBlokData, storyblokEditable, StoryblokServerComponent } from "@storyblok/react/rsc";
 
-const SBMenu = ({ blok }: { blok: Menu }) => {
+const pageContent = ({ blok }: { blok: Page }) => {
   return (
     <div {...storyblokEditable(blok as SbBlokData)}>
-      {blok?.items?.map((blok) => (
+      {blok?.body?.map((blok) => (
         <StoryblokServerComponent blok={blok} key={blok?._uid} />
       ))}
     </div>
   );
 };
 
-export default SBMenu;
+export default pageContent;

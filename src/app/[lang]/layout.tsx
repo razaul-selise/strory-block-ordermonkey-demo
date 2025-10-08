@@ -1,6 +1,4 @@
-import { Global } from "@/.storyblok/types/339170/storyblok-components";
-import { twkEverett } from "@/components/fonts";
-import { GlobalStateProvider } from "@/components/global-provider";
+import { Global } from "@/.storyblok/types/287474179047807/storyblok-components";
 import { StoryblokProvider } from "@/components/storyblokProvider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { i18n, Locale } from "@/i18n/i18n-config";
@@ -102,7 +100,7 @@ export default async function PageLayout({
         /> */}
       </head>
 
-      <body className={`${twkEverett.className} antialiased`}>
+      <body>
         {/* ✅ Google Tag Manager (noscript) */}
         {/* <noscript>
           <iframe
@@ -116,19 +114,17 @@ export default async function PageLayout({
 
         <NextIntlClientProvider>
           <StoryblokProvider>
-            <GlobalStateProvider>
-              <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-                <main className="relative z-50 bg-[#ececec] dark:bg-neutral-800">
-                  <div className="relative theme-container mt-[-100vh] min-h-screen px-0">
-                    <Header burger_menu={globalStory?.burger_menu} />
-                    {children}
-                  </div>
-                </main>
-                {/* footer */}
-                <Footer blok={globalStory?.footer} />
-                {/* footer */}
-              </ThemeProvider>
-            </GlobalStateProvider>
+            <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+              <main className="">
+                <div className="">
+                  <Header burger_menu={globalStory?.burger_menu} />
+                  {children}
+                </div>
+              </main>
+              {/* footer */}
+              <Footer blok={globalStory?.footer} />
+              {/* footer */}
+            </ThemeProvider>
           </StoryblokProvider>
         </NextIntlClientProvider>
       </body>

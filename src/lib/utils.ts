@@ -1,4 +1,3 @@
-import { Accordion } from "@/.storyblok/types/339170/storyblok-components";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -81,7 +80,7 @@ type MailServiceResponse = {
 
 // Params type for sending email
 type SendClientEmailParams = {
-  Purpose: "KRAAK_CW_CONTACT_EMAIL";
+  Purpose: "";
   Language: "de-DE";
   DataContext: {
     FIRMA_NAME: string;
@@ -99,7 +98,7 @@ type SendClientEmailParams = {
 };
 
 type SendConfirmationEmailParams = {
-  Purpose: "KRAAK_CW_TRIAL";
+  Purpose: "";
   Language: "de-DE" | "en-US";
   DataContext: {
     First_Name: string;
@@ -256,54 +255,6 @@ export const recaptchaVarify = async (token: string, remoteip: string): Promise<
     return false;
   }
 };
-
-interface DescriptionNode {
-  type: string;
-  content?: DescriptionNode[];
-  text?: string;
-}
-
-function extractTextFromDescription(node?: DescriptionNode): string {
-  if (!node) return "";
-  if (node.text) return node.text;
-  if (node.content) {
-    return node.content.map(extractTextFromDescription).join(" ");
-  }
-  return "";
-}
-
-export function searchAccordion(data: Accordion[], query: string): Accordion[] {
-  const lowerQuery = query.toLowerCase();
-
-  return data.reduce<Accordion[]>((acc, section) => {
-    if (!section.items || section.items.length === 0) return acc;
-
-    const filteredItems = section.items
-      .map((item) => {
-        if (!item.subitems || item.subitems.length === 0) return null;
-
-        const matchedSubitems = item.subitems.filter((subitem) => {
-          const topTitle = (item?.title ?? "").toLowerCase().includes(lowerQuery);
-          const titleMatch = (subitem.title ?? "").toLowerCase().includes(lowerQuery);
-          const descText = extractTextFromDescription(subitem.description);
-          const descMatch = descText.toLowerCase().includes(lowerQuery);
-          return topTitle || titleMatch || descMatch;
-        });
-
-        return matchedSubitems.length > 0 ? { ...item, subitems: matchedSubitems } : null;
-      })
-      .filter((item): item is NonNullable<typeof item> => item !== null);
-
-    if (filteredItems.length > 0) {
-      acc.push({
-        ...section,
-        items: filteredItems,
-      });
-    }
-
-    return acc;
-  }, []);
-}
 
 export const isVideoFile = (filename: string): boolean => {
   return /\.(mp4|webm|mov|avi|mkv|flv|wmv|mpeg)$/i.test(filename);

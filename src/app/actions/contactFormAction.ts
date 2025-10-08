@@ -47,7 +47,7 @@ export async function contactFormAction(
     const sendEmail = await sendBlocksEmailService({
       access_token: identityToken.access_token,
       to: process.env.CONTACT_FORM_EMAILS?.split(",") ?? [],
-      Purpose: "KRAAK_CW_CONTACT_EMAIL",
+      Purpose: "",
       Language: "de-DE",
       DataContext: {
         FIRMA_NAME: data.get("firmenname")?.toString() ?? "",
@@ -70,7 +70,7 @@ export async function contactFormAction(
     const confirmationEmailResult = await sendBlocksEmailService({
       access_token: identityToken.access_token,
       to: [data.get("email")?.toString() ?? ""],
-      Purpose: "KRAAK_CW_TRIAL",
+      Purpose: "",
       Language: lang.toLowerCase() === "de" ? "de-DE" : "en-US",
       DataContext: {
         First_Name: data.get("vorname")?.toString() ?? "",

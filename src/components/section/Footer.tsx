@@ -1,4 +1,4 @@
-import { FooterItem } from "@/.storyblok/types/339170/storyblok-components";
+import { FooterItem } from "@/.storyblok/types/287474179047807/storyblok-components";
 import { StoryblokServerComponent } from "@storyblok/react/rsc";
 
 const Footer = async ({ blok }: { blok?: FooterItem[] }) => {
@@ -7,7 +7,7 @@ const Footer = async ({ blok }: { blok?: FooterItem[] }) => {
   }
 
   return (
-    <footer className="">
+    <footer className="flex gap-4 bg-black px-5 py-8 text-white">
       Footer
       {blok.map((item) => (
         <StoryblokServerComponent blok={item} key={item?._uid} />

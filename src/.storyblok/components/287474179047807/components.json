@@ -117,6 +117,54 @@
     "metadata": {}
   },
   {
+    "name": "global",
+    "display_name": null,
+    "description": "",
+    "created_at": "2025-09-30T12:00:09.622Z",
+    "updated_at": "2025-10-08T10:23:54.746Z",
+    "id": 96436263417393,
+    "schema": {
+      "burger_menu": {
+        "type": "bloks",
+        "pos": 0,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "menu"
+        ],
+        "id": "MCUShGWFQn6e-Eo2evOedg",
+        "minimum": 1,
+        "maximum": 1
+      },
+      "footer": {
+        "type": "bloks",
+        "pos": 1,
+        "id": "xQd0mpxgSjW4XpRqTrDLfw",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "footer_item"
+        ],
+        "description": "If you have multiple row in your footer design add multiple footer item otherwise add onle one.Each footer Item contains multiple links"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": true,
+    "preview_tmpl": null,
+    "is_nestable": false,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "global",
+    "component_group_uuid": "df3ee60b-4f27-48ff-8c22-460a62f3d685",
+    "color": "var(--sb-color-accent-background-green-cyan)",
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
     "name": "grid",
     "display_name": null,
     "description": null,
@@ -146,11 +194,11 @@
     "metadata": {}
   },
   {
-    "name": "Hero",
+    "name": "hero",
     "display_name": null,
     "description": "",
     "created_at": "2025-09-30T12:37:02.239Z",
-    "updated_at": "2025-09-30T12:38:46.362Z",
+    "updated_at": "2025-10-07T09:16:13.833Z",
     "id": 96445326296919,
     "schema": {
       "Title": {
@@ -183,7 +231,7 @@
     "is_nestable": true,
     "all_presets": [],
     "preset_id": null,
-    "real_name": "Hero",
+    "real_name": "hero",
     "component_group_uuid": "61f483cc-0079-4c1e-9d2f-0bb8c1cdfa03",
     "color": null,
     "icon": null,
@@ -379,53 +427,6 @@
     "all_presets": [],
     "preset_id": null,
     "real_name": "page",
-    "component_group_uuid": "df3ee60b-4f27-48ff-8c22-460a62f3d685",
-    "color": "var(--sb-color-accent-background-green-cyan)",
-    "icon": null,
-    "internal_tags_list": [],
-    "internal_tag_ids": [],
-    "content_type_asset_preview": null,
-    "metadata": {}
-  },
-  {
-    "name": "Regular",
-    "display_name": null,
-    "description": "",
-    "created_at": "2025-09-30T12:00:09.622Z",
-    "updated_at": "2025-09-30T12:32:13.246Z",
-    "id": 96436263417393,
-    "schema": {
-      "burger_menu": {
-        "type": "bloks",
-        "pos": 0,
-        "restrict_type": "",
-        "restrict_components": true,
-        "component_whitelist": [
-          "menu"
-        ],
-        "id": "MCUShGWFQn6e-Eo2evOedg",
-        "minimum": 1,
-        "maximum": 1
-      },
-      "footer": {
-        "type": "bloks",
-        "pos": 1,
-        "id": "xQd0mpxgSjW4XpRqTrDLfw",
-        "restrict_type": "",
-        "restrict_components": true,
-        "component_whitelist": [
-          "footer_item"
-        ]
-      }
-    },
-    "image": null,
-    "preview_field": null,
-    "is_root": true,
-    "preview_tmpl": null,
-    "is_nestable": false,
-    "all_presets": [],
-    "preset_id": null,
-    "real_name": "Regular",
     "component_group_uuid": "df3ee60b-4f27-48ff-8c22-460a62f3d685",
     "color": "var(--sb-color-accent-background-green-cyan)",
     "icon": null,
