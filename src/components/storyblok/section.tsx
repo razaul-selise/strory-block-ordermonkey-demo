@@ -10,7 +10,7 @@ const Section = ({ blok }: { blok: SectionStoryblok }) => {
     >
       <h2 className="mt-4">{blok?.title}</h2>
       <div className="w-full">
-        <p className="mt-10 px-5">{parse(renderRichText(blok?.description) ?? "")}</p>
+        <div className="richtext mt-10 px-5">{parse(renderRichText(blok?.description) ?? "")}</div>
         {blok?.action_btn_link?.url && (
           <div className="">
             <a

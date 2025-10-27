@@ -15,7 +15,7 @@ const Footer = dynamic(() => import("@/components/section/Footer"));
 export const revalidate = 300; // 5 minutes
 
 export const metadata: Metadata = {
-  title: "KRAAK",
+  title: "YOU PROJECT",
 };
 
 export async function generateStaticParams() {
@@ -116,14 +116,13 @@ export default async function PageLayout({
           <StoryblokProvider>
             <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
               <main className="">
-                <div className="">
-                  <Header burger_menu={globalStory?.burger_menu} />
-                  {children}
-                </div>
+                <Header burger_menu={globalStory?.burger_menu} />
+
+                {children}
+                {/* footer */}
+                <Footer blok={globalStory?.footer} />
+                {/* footer */}
               </main>
-              {/* footer */}
-              <Footer blok={globalStory?.footer} />
-              {/* footer */}
             </ThemeProvider>
           </StoryblokProvider>
         </NextIntlClientProvider>

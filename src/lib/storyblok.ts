@@ -1,3 +1,5 @@
+import Blog from "@/components/storyblok/blog";
+import Global from "@/components/storyblok/global";
 import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
 import dynamic from "next/dynamic";
 const Footer = dynamic(() => import("@/components/section/Footer"), {
@@ -37,6 +39,8 @@ const components = {
   menu_item: SBMenuItem,
   page: pageContent,
   Section: Section,
+  blog: Blog,
+  global: Global,
 };
 
 export const getStoryblokApi = storyblokInit({
