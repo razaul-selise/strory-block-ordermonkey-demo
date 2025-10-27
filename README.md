@@ -9,6 +9,7 @@ This repository includes a **fully setup production-ready Next.js application** 
 - ✅ **Multi-environment setup** (dev, stage, prod)
 - ✅ **Production-grade structure**
 - ✅ **Google Tag Manager,Google Consent Mode,Usercentric Cookiebot CMP**
+- ✅ **Some Usefull Apps from storyblok that helps to improve workflow**
 
 ---
 
@@ -59,3 +60,13 @@ You will find some usefull function on utils.ts. and lib folder.
 ### 6. Google Tag Manager,Google Consent Mode,Usercentric Cookiebot CMP
 
 Google Tag Manager,Google Consent Mode,Usercentric Cookiebot CMP all of them are integrated and commented out on src/app/[lang]/layout.tsx file.Uncomment based on your need.
+
+### 7. Some Usefull Apps from storyblok that helps to improve workflow
+
+Go to the Apps from your space sidebar.Then find them and click on install.
+Apps :
+Trash Bin,
+Colorpicker,
+Replace Asset,
+Task Manager,
+SEO
