@@ -8,6 +8,7 @@ This repository includes a **fully setup production-ready Next.js application** 
 - ✅ **Git pre-hooks** (via Husky)
 - ✅ **Multi-environment setup** (dev, stage, prod)
 - ✅ **Production-grade structure**
+- ✅ **Google Tag Manager,Google Consent Mode,Usercentric Cookiebot CMP**
 
 ---
 
@@ -54,3 +55,7 @@ pnpm dev-https
 ### 5. Usefull functions
 
 You will find some usefull function on utils.ts. and lib folder.
+
+### 6. Google Tag Manager,Google Consent Mode,Usercentric Cookiebot CMP
+
+Google Tag Manager,Google Consent Mode,Usercentric Cookiebot CMP all of them are integrated and commented out on src/app/[lang]/layout.tsx file.Uncomment based on your need.

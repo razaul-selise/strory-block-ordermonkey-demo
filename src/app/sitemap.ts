@@ -12,7 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Fetch dynamic module slugs
   const moduleSlugs: string[] = await fetch(
-    `https://api.storyblok.com/v2/cdn/stories?starts_with=${envPrefix}/Modules/&version=published&token=${process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN}`,
+    `https://api.storyblok.com/v2/cdn/stories?starts_with=${envPrefix}/Blog/&version=published&token=${process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN}`,
     {
       next: { revalidate: 300 },
     }
