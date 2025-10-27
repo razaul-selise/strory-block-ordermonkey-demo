@@ -1,15 +1,17 @@
-# Next.js + Storyblok Production Starter
+# Next.js 15.3.4 + Storyblok Production Starter
 
 This repository includes a **fully setup production-ready Next.js application** with the following integrations and configurations:
 
 - ✅ **Storyblok** setup with multiple environments
 - ✅ **ESLint** configuration
 - ✅ **SonarQube** setup
-- ✅ **Git pre-hooks** (via Husky)
+- ✅ **Git pre-hooks** (via git hooks)
 - ✅ **Multi-environment setup** (dev, stage, prod)
 - ✅ **Production-grade structure**
 - ✅ **Google Tag Manager,Google Consent Mode,Usercentric Cookiebot CMP**
 - ✅ **Some Usefull Apps from storyblok that helps to improve workflow**
+- ✅ **Sitemap**
+- ✅ **Robot.tsx**
 
 ---
 
@@ -37,7 +39,9 @@ sh scripts/setup-hooks.sh
 
 ### 4.Setup Storyblok
 
-Go to the package.json file and replace YOUR*SPACE_ID_WITHOUT*# with your SB space id.DO this Step each time you update storyblok schema to get the latest types and suggestions. Now run
+Go to the package.json file and replace YOUR*SPACE_ID_WITHOUT*# with your SB space id.
+
+## DO this Step each time you update storyblok schema to get the latest types and suggestions. Now run
 
 ```bash
 storyblok login
@@ -70,3 +74,7 @@ Colorpicker,
 Replace Asset,
 Task Manager,
 SEO
+
+### 8. Sitemap,Robot.tsx
+
+Head over to the sitemap and robot.txt file and change based on your project need.
