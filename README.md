@@ -78,3 +78,5 @@ SEO
 ### 8. Sitemap,Robot.tsx
 
 Head over to the sitemap and robot.txt file and change based on your project need.
+
+# Use <storyblok.rns@selisegroup.com> account to get the inicial schema template and create a new one from the existing Starter Template
