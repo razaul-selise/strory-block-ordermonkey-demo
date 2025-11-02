@@ -1,7 +1,7 @@
 #!/bin/sh
 echo "🚦 Running Pre-commit hook..."
 
-pnpm exec lint-staged
+pnpm lint-format
 
 # Run TypeScript type check
 echo "📦 Running TypeScript type check..."
