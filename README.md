@@ -3,7 +3,7 @@
 This repository includes a **fully setup production-ready Next.js application** with the following integrations and configurations:
 
 - ✅ **Storyblok** setup with multiple environments
-- ✅ **ESLint** configuration
+- ✅ **Biome** configuration
 - ✅ **SonarQube** setup
 - ✅ **Git pre-hooks** (via git hooks)
 - ✅ **Multi-environment setup** (dev, stage, prod)
