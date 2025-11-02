@@ -7,11 +7,11 @@ export const useMessages = jest.fn(() => ({}));
 export const useTimeZone = jest.fn(() => "UTC");
 export const useNow = jest.fn(() => new Date());
 export const useFormatter = jest.fn(() => ({
-  dateTime: jest.fn(),
-  number: jest.fn(),
-  relativeTime: jest.fn(),
+	dateTime: jest.fn(),
+	number: jest.fn(),
+	relativeTime: jest.fn(),
 }));
 
 export const NextIntlClientProvider = ({ children }) => {
-  return React.createElement("div", {}, children);
+	return React.createElement("div", {}, children);
 };
