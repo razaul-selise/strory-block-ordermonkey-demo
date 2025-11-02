@@ -48,7 +48,7 @@ export const GET = async (request: NextRequest) => {
 
 	let finalURL = `/${slug}`;
 	if (remainingParams) {
-		finalURL += "?" + remainingParams;
+		finalURL += `?${remainingParams}`;
 	}
 
 	return redirect({ href: finalURL, locale: extractedLocale });

@@ -18,15 +18,11 @@ import {
 
 interface LanguageSwitcherProps {
 	className?: string;
-	indicatorClassName?: string;
 }
 
 const languages = i18n.locales.map((locale) => locale.toUpperCase());
 
-const LanguageSwitcher = ({
-	className,
-	indicatorClassName,
-}: LanguageSwitcherProps) => {
+const LanguageSwitcher = ({ className }: LanguageSwitcherProps) => {
 	const params = useParams();
 	const searchParams = useSearchParams();
 	const pathname = usePathname();

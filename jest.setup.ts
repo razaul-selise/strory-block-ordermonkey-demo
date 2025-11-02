@@ -1,6 +1,7 @@
 // jest.setup.ts
+/** biome-ignore-all lint/suspicious/noExplicitAny: false-positive */
 import "@testing-library/jest-dom";
-import { URL, URLSearchParams } from "url";
+import { URL, URLSearchParams } from "node:url";
 
 // Polyfill timer functions for Jest environment
 global.setTimeout = global.setTimeout || setTimeout;
@@ -66,7 +67,6 @@ Object.defineProperty(window, "clearInterval", {
 
 // Mock ResizeObserver
 global.ResizeObserver = class ResizeObserver {
-	constructor() {}
 	observe() {
 		return null;
 	}
