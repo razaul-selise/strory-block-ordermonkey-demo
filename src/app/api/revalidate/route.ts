@@ -1,5 +1,5 @@
 // app/api/revalidate/route.ts
-import { revalidatePath, revalidateTag } from "next/cache";
+import { revalidatePath, updateTag } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
       `story-${fullSlugLowerCase}-lang-en`,
     ];
     for (const tag of tagsToRevalidate) {
-      revalidateTag(tag);
+      updateTag(tag);
       console.log("🔁 Revalidating tag:", tag);
     }
 
