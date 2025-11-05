@@ -1,4 +1,4 @@
-# Next.js 15.3.4 + Storyblok Production Starter
+# Next.js 16.0.1 + Storyblok Production Starter
 
 This repository includes a **fully setup production-ready Next.js application** with the following integrations and configurations:
 
