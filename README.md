@@ -39,7 +39,7 @@ sh scripts/setup-hooks.sh
 
 ### 4.Setup Storyblok
 
-Go to the package.json file and replace YOUR*SPACE_ID_WITHOUT*# with your SB space id.
+Go to the package.json file and replace YOUR*SPACE_ID_WITHOUT*# with your SB space id. Also add STORYBLOK_ACCESS_TOKEN (access level: preview) in environment files. You can get the token from Storyblok space settings -> Access token.
 
 ## DO this Step each time you update storyblok schema to get the latest types and suggestions. Now run
 
