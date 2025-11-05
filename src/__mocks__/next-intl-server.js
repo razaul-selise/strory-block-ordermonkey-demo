@@ -5,9 +5,9 @@ export const getMessages = jest.fn(() => Promise.resolve({}));
 export const getTimeZone = jest.fn(() => Promise.resolve("UTC"));
 export const getNow = jest.fn(() => Promise.resolve(new Date()));
 export const getFormatter = jest.fn(() =>
-  Promise.resolve({
-    dateTime: jest.fn(),
-    number: jest.fn(),
-    relativeTime: jest.fn(),
-  })
+	Promise.resolve({
+		dateTime: jest.fn(),
+		number: jest.fn(),
+		relativeTime: jest.fn(),
+	}),
 );

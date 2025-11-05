@@ -1,13 +1,13 @@
-import { Global } from "@/.storyblok/types/287474179047807/storyblok-components";
-import { StoryblokProvider } from "@/components/storyblokProvider";
-import { ThemeProvider } from "@/components/theme-provider";
-import { i18n, Locale } from "@/i18n/i18n-config";
-import { getStory } from "@/lib/fetchers/storyblok-fetcher";
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
-import dynamic from "next/dynamic";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
+import type { Global } from "@/.storyblok/types/287474179047807/storyblok-components";
+import { StoryblokProvider } from "@/components/storyblokProvider";
+import { ThemeProvider } from "@/components/theme-provider";
+import { i18n, type Locale } from "@/i18n/i18n-config";
+import { getStory } from "@/lib/fetchers/storyblok-fetcher";
 import "../globals.css";
 const Header = dynamic(() => import("@/components/section/Header"));
 const Footer = dynamic(() => import("@/components/section/Footer"));
@@ -15,49 +15,49 @@ const Footer = dynamic(() => import("@/components/section/Footer"));
 export const revalidate = 300; // 5 minutes
 
 export const metadata: Metadata = {
-  title: "YOU PROJECT",
+	title: "YOU PROJECT",
 };
 
 export async function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }));
+	return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
 export default async function PageLayout({
-  children,
-  params,
+	children,
+	params,
 }: Readonly<{
-  children: ReactNode;
-  params: Promise<{ lang: Locale }>;
+	children: ReactNode;
+	params: Promise<{ lang: Locale }>;
 }>) {
-  const { lang } = await params;
-  setRequestLocale(lang);
+	const { lang } = await params;
+	setRequestLocale(lang);
 
-  const envPrefix = process.env.CURRENT_ENV as "dev" | "stage" | "prod";
+	const envPrefix = process.env.CURRENT_ENV as "dev" | "stage" | "prod";
 
-  const global_story = await getStory(envPrefix, "global", lang);
-  const globalStory = global_story?.content as Global;
+	const global_story = await getStory(envPrefix, "global", lang);
+	const globalStory = global_story?.content as Global;
 
-  // const gtm_auth = process.env.GTM_AUTH;
-  // const gtm_preview_env = process.env.GTM_PREVIEW_ENV;
+	// const gtm_auth = process.env.GTM_AUTH;
+	// const gtm_preview_env = process.env.GTM_PREVIEW_ENV;
 
-  return (
-    <html lang={lang}>
-      <head>
-        {/* Cookiebot CMP */}
-        {/* <Script
+	return (
+		<html lang={lang}>
+			<head>
+				{/* Cookiebot CMP */}
+				{/* <Script
           src="https://web.cmp.usercentrics.eu/modules/autoblocker.js"
           strategy={`lazyOnload`}
           defer
         /> */}
-        {/* <Script
+				{/* <Script
           id="usercentrics-cmp"
           src="https://web.cmp.usercentrics.eu/ui/loader.js"
           data-settings-id="i8SXDHQaMpCuaC"
           strategy={`lazyOnload`}
           defer
         /> */}
-        {/* Google Consent Mode */}
-        {/* <Script id="google-consent-mode" strategy="lazyOnload" defer>
+				{/* Google Consent Mode */}
+				{/* <Script id="google-consent-mode" strategy="lazyOnload" defer>
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -76,8 +76,8 @@ export default async function PageLayout({
           `}
         </Script> */}
 
-        {/* Google Tag Manager */}
-        {/* <Script
+				{/* Google Tag Manager */}
+				{/* <Script
           type="text/plain"
           id="gtm"
           strategy="lazyOnload"
@@ -98,11 +98,11 @@ export default async function PageLayout({
           strategy="lazyOnload"
           defer
         /> */}
-      </head>
+			</head>
 
-      <body>
-        {/* ✅ Google Tag Manager (noscript) */}
-        {/* <noscript>
+			<body>
+				{/* ✅ Google Tag Manager (noscript) */}
+				{/* <noscript>
           <iframe
             title="gtm"
             src={`https://www.googletagmanager.com/ns.html?id=GTM-N4FDHPWJ&gtm_auth=${gtm_auth}&gtm_preview=env-${gtm_preview_env}&gtm_cookies_win=x%22`}
@@ -112,21 +112,21 @@ export default async function PageLayout({
           ></iframe>
         </noscript> */}
 
-        <NextIntlClientProvider>
-          <StoryblokProvider>
-            <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-              <main className="">
-                <Header burger_menu={globalStory?.burger_menu} />
+				<NextIntlClientProvider>
+					<StoryblokProvider>
+						<ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+							<main className="">
+								<Header burger_menu={globalStory?.burger_menu} />
 
-                {children}
-                {/* footer */}
-                <Footer blok={globalStory?.footer} />
-                {/* footer */}
-              </main>
-            </ThemeProvider>
-          </StoryblokProvider>
-        </NextIntlClientProvider>
-      </body>
-    </html>
-  );
+								{children}
+								{/* footer */}
+								<Footer blok={globalStory?.footer} />
+								{/* footer */}
+							</main>
+						</ThemeProvider>
+					</StoryblokProvider>
+				</NextIntlClientProvider>
+			</body>
+		</html>
+	);
 }

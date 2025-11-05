@@ -1,9 +1,9 @@
-# Next.js 15.3.4 + Storyblok Production Starter
+# Next.js 16.0.1 + Storyblok Production Starter
 
 This repository includes a **fully setup production-ready Next.js application** with the following integrations and configurations:
 
 - ✅ **Storyblok** setup with multiple environments
-- ✅ **ESLint** configuration
+- ✅ **Biome** configuration (Make sure to install Biome extension from vscode extension marketplace)
 - ✅ **SonarQube** setup
 - ✅ **Git pre-hooks** (via git hooks)
 - ✅ **Multi-environment setup** (dev, stage, prod)
@@ -39,7 +39,7 @@ sh scripts/setup-hooks.sh
 
 ### 4.Setup Storyblok
 
-Go to the package.json file and replace YOUR*SPACE_ID_WITHOUT*# with your SB space id.
+Go to the package.json file and replace YOUR*SPACE_ID_WITHOUT*# with your SB space id. Also add STORYBLOK_ACCESS_TOKEN (access level: preview) in environment files. You can get the token from Storyblok space settings -> Access token.
 
 ## DO this Step each time you update storyblok schema to get the latest types and suggestions. Now run
 
