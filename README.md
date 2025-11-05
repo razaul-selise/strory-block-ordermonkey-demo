@@ -3,7 +3,7 @@
 This repository includes a **fully setup production-ready Next.js application** with the following integrations and configurations:
 
 - ✅ **Storyblok** setup with multiple environments
-- ✅ **Biome** configuration
+- ✅ **Biome** configuration (Make sure to install Biome extension from vscode extension marketplace)
 - ✅ **SonarQube** setup
 - ✅ **Git pre-hooks** (via git hooks)
 - ✅ **Multi-environment setup** (dev, stage, prod)
