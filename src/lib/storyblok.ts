@@ -13,12 +13,18 @@ const FooterItem = dynamic(
 		ssr: true,
 	},
 );
-const leftImageSection = dynamic(() => import("@/components/storyblok/leftImageSection"), {
-	ssr: true,
-});
-const heroSection = dynamic(() => import("@/components/storyblok/heroSection"), {
-	ssr: true,
-});
+const leftImageSection = dynamic(
+	() => import("@/components/storyblok/leftImageSection"),
+	{
+		ssr: true,
+	},
+);
+const heroSection = dynamic(
+	() => import("@/components/storyblok/heroSection"),
+	{
+		ssr: true,
+	},
+);
 
 const Links = dynamic(() => import("@/components/storyblok/links"), {
 	ssr: true,

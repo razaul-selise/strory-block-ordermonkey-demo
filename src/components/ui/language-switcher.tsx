@@ -42,9 +42,7 @@ const LanguageSwitcher = ({ className }: LanguageSwitcherProps) => {
 					<button
 						key={lang}
 						onClick={() => handleLocaleChange(lang.toLowerCase() as Locale)}
-						className={cn(
-							"text-white font-extrabold cursor-pointer"
-						)}
+						className={cn("text-white font-extrabold cursor-pointer")}
 						aria-label={`Switch to ${lang}`}
 					>
 						{lang}
