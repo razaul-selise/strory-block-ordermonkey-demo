@@ -13,10 +13,10 @@ const FooterItem = dynamic(
 		ssr: true,
 	},
 );
-const Section = dynamic(() => import("@/components/storyblok/section"), {
+const leftImageSection = dynamic(() => import("@/components/storyblok/leftImageSection"), {
 	ssr: true,
 });
-const Hero = dynamic(() => import("@/components/storyblok/hero"), {
+const heroSection = dynamic(() => import("@/components/storyblok/heroSection"), {
 	ssr: true,
 });
 
@@ -38,14 +38,14 @@ const pageContent = dynamic(
 );
 
 const components = {
-	hero: Hero,
+	hero_section: heroSection,
 	footer: Footer,
 	footer_item: FooterItem,
 	links: Links,
 	menu: SBMenu,
 	menu_item: SBMenuItem,
 	page: pageContent,
-	Section: Section,
+	left_image_section: leftImageSection,
 	blog: Blog,
 	global: Global,
 };

@@ -2,19 +2,10 @@
 
 import { useParams, useSearchParams } from "next/navigation";
 import { useLocale } from "next-intl";
-import { useEffect, useRef, useTransition } from "react";
+import { useTransition } from "react";
 import { i18n, type Locale } from "@/i18n/i18n-config";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import {
-	Select,
-	SelectContent,
-	SelectGroup,
-	SelectItem,
-	SelectLabel,
-	SelectTrigger,
-	SelectValue,
-} from "./select";
 
 interface LanguageSwitcherProps {
 	className?: string;
@@ -29,24 +20,12 @@ const LanguageSwitcher = ({ className }: LanguageSwitcherProps) => {
 	const router = useRouter();
 	const [isPending, startTransition] = useTransition();
 
-	const currentLanguage = useLocale().toUpperCase() as Locale;
+	const currentLanguage = useLocale().toUpperCase();
 	const paramsObject = Object.fromEntries(searchParams.entries());
-
-	const containerRef = useRef<HTMLDivElement>(null);
-	const langRefs = useRef<(HTMLButtonElement | null)[]>([]);
-
-	const orderedLanguages = [
-		currentLanguage,
-		...languages.filter((l) => l !== currentLanguage),
-	];
-
-	useEffect(() => {
-		langRefs.current = langRefs.current.slice(0, orderedLanguages.length);
-	}, [orderedLanguages.length]);
 
 	/* ---------- locale change ---------- */
 	const handleLocaleChange = (newLocale: Locale) => {
-		if (newLocale.toLowerCase() === params.lang) {
+		if (newLocale === params.lang) {
 			return;
 		}
 
@@ -56,33 +35,22 @@ const LanguageSwitcher = ({ className }: LanguageSwitcherProps) => {
 	};
 
 	return (
-		<div ref={containerRef} className={cn("relative inline-flex", className)}>
-			<Select
-				aria-label="Select Language"
-				value={currentLanguage}
-				onValueChange={(value) =>
-					handleLocaleChange(value.toLowerCase() as Locale)
-				}
-			>
-				<SelectTrigger className="w-[180px]">
-					<SelectValue placeholder="Select a language" />
-				</SelectTrigger>
-				<SelectContent>
-					<SelectGroup>
-						<SelectLabel>Choose your language</SelectLabel>
-						{orderedLanguages.map((lang) => (
-							<SelectItem key={lang} value={lang}>
-								{lang}
-							</SelectItem>
-						))}
-					</SelectGroup>
-				</SelectContent>
-			</Select>
-
-			{/* Screen reader announcements */}
-			<div aria-live="polite" aria-atomic="true" className="sr-only">
-				{isPending && "Switching language..."}
-			</div>
+		<div className={cn("relative inline-flex gap-2", className)}>
+			{languages.map((lang) => {
+				const isActive = lang === currentLanguage;
+				return (
+					<button
+						key={lang}
+						onClick={() => handleLocaleChange(lang.toLowerCase() as Locale)}
+						className={cn(
+							"text-white font-extrabold cursor-pointer"
+						)}
+						aria-label={`Switch to ${lang}`}
+					>
+						{lang}
+					</button>
+				);
+			})}
 		</div>
 	);
 };

@@ -42,14 +42,14 @@ export interface Grid {
 		| FooterItem
 		| Global
 		| Grid
-		| Hero
+		| heroSection
 		| Item
 		| Links
 		| Menu
 		| MenuItem
 		| Page
 		| Robots
-		| Section
+		| leftImageSection
 		| SubMenu
 		| Teaser
 	)[];
@@ -58,10 +58,12 @@ export interface Grid {
 	[k: string]: unknown;
 }
 
-export interface Hero {
-	Title?: string;
+export interface heroSection {
+	//add button and image here
+	bg_image?: StoryblokAsset;
+	title?: string;
 	description?: StoryblokRichtext;
-	component: "hero";
+	component: "hero_section";
 	_uid: string;
 	[k: string]: unknown;
 }
@@ -110,14 +112,14 @@ export interface Page {
 		| FooterItem
 		| Global
 		| Grid
-		| Hero
+		| heroSection
 		| Item
 		| Links
 		| Menu
 		| MenuItem
 		| Page
 		| Robots
-		| Section
+		| leftImageSection
 		| SubMenu
 		| Teaser
 	)[];
@@ -135,18 +137,18 @@ export interface Robots {
 	[k: string]: unknown;
 }
 
-export interface Section {
-	title?: string;
-	description?: StoryblokRichtext;
-	action_btn_svg_icon?: StoryblokAsset;
-	action_btn_text?: string;
-	action_btn_link?: Exclude<
-		StoryblokMultilink,
-		{ linktype?: "email" } | { linktype?: "asset" }
-	>;
-	component: "Section";
-	_uid: string;
-	[k: string]: unknown;
+export interface leftImageSection {
+  image?: StoryblokAsset;
+  title?: string;
+  description?: StoryblokRichtext;
+  link?: Exclude<
+    StoryblokMultilink,
+    { linktype?: "email" } | { linktype?: "asset" }
+  >;
+  link_text?: string;
+  component: "left_image_section";
+  _uid: string;
+  [k: string]: unknown;
 }
 
 export interface SubMenu {
